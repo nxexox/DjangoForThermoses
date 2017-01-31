@@ -16,6 +16,12 @@ Including another URLconf
 from django.conf.urls import url
 from django.contrib import admin
 
+from lessons import views
+
+
 urlpatterns = [
+    url(r'^$', 'lessons.views.hello_world_view'),
+    url(r'^string/$', views.hello_world_string),
+    url(r'^string/403/$', views.hello_world_403),
     url(r'^admin/', admin.site.urls),
 ]

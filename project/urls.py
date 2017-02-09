@@ -23,5 +23,9 @@ urlpatterns = [
     url(r'^$', views.hello_world_view),
     url(r'^string/$', views.hello_world_string),
     url(r'^string/403/$', views.hello_world_403),
+
+    url(r'^lesson/list/$', views.lesson_list_view),
+    url(r'^lesson/(?P<pk>\d+)/$', views.lesson_retrieve_view),
+
     url(r'^admin/', admin.site.urls),
 ]

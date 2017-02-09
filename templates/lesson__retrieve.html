@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Лекция с ID{{ lesson.pk }}{# lesson.id #}{% endblock %}
+
+{% block h1 %}
+    Лекция с ID {{ lesson.pk }}{% if lesson.name %}и названием {{ lesson.name }}{% endif %}
+{% endblock %}
+
+{% block content %}
+<h3>Полная информация по лекции: </h3>
+
+    {% for figa in lesson.__dict__ %}
+        <p>{{ figa }}: </p>
+    {% endfor %}
+{% endblock %}

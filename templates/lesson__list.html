@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% block title %}Список уроков{% endblock %}
+
+{% block h1 %}Список уроков. Тестирование шаблонов.{% endblock %}
+
+{% block content %}
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>test</th>
+            <th>name</th>
+            <th>count</th>
+            <th>preview</th>
+            <th>date_create</th>
+            <th>date_update</th>
+            <th>is_true</th>
+        </tr>
+    </thead>
+    <tbody>
+    {% for lesson in lesson_queryset %}
+        <tr>
+            <td>{{ lesson.id }}</td>
+            <td>{{ lesson.test }}</td>
+            <td>{{ lesson.name }}</td>
+            <td>{{ lesson.count }}</td>
+            <td>{{ lesson.preview }}</td>
+            <td>{{ lesson.date_create }}</td>
+            <td>{{ lesson.date_update }}</td>
+            <td>{{ lesson.is_true }}</td>
+        </tr>
+    {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
+
+{% block footer %}{% endblock %}
